@@ -1,0 +1,7 @@
+{
+  "name": "locationgps-app",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
