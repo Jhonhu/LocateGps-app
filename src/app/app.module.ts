@@ -4,8 +4,15 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { Geolocation } from '@ionic-native/geolocation';
+import { AgmCoreModule } from '@agm/core';
+
+
 
 @NgModule({
   declarations: [
@@ -14,7 +21,12 @@ import { HomePage } from '../pages/home/home';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    CommonModule,
+    FormsModule,
+    IonicModule.forRoot(MyApp),
+    AgmCoreModule.forRoot({
+      apiKey:   'AIzaSyBzMETjtBUO-PHUNJoX8nsQom50D4ek2cs'
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -24,6 +36,7 @@ import { HomePage } from '../pages/home/home';
   providers: [
     StatusBar,
     SplashScreen,
+    Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

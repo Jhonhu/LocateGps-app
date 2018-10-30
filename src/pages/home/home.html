@@ -1,14 +1,40 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+    <ion-title> Geolocation  </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+<div>
+  <p>latitude : {{latitude}}</p>
+  <p>longitude : {{longitude}}</p>
+</div>
+
+<div>
+  <ion-card>
+    <agm-map [zoom]="15"  [latitude]="latitude" [longitude]="longitude" (mapClick)= "onChoseLocation($event)">
+      <agm-marker [latitude]="latitude" [longitude]="longitude" (mapClick)= "presentLoading()">
+      </agm-marker>
+    </agm-map>
+  </ion-card>
+
+  <div padding-bottom>
+
+    <button ion-button icon-start float-left (click)="CurrentPosition(); presentLoading(30000)" >
+      <ion-icon name="compass"></ion-icon>
+      Get Location
+    </button>
+    <button ion-button icon-end float-right (click)="seePosition(); presentLoading(30000)">
+      Get Position
+      <ion-icon name="locate"></ion-icon>
+    </button>
+
+  </div>
+
+</div>
+
+
+
+
 </ion-content>
