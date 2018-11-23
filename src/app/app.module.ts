@@ -24,8 +24,9 @@ import { AgmCoreModule } from '@agm/core';
     CommonModule,
     FormsModule,
     IonicModule.forRoot(MyApp),
+    Geolocation,
     AgmCoreModule.forRoot({
-      apiKey:   'AIzaSyBzMETjtBUO-PHUNJoX8nsQom50D4ek2cs'
+      apiKey:   'Insert Google Api Key'
     })
   ],
   bootstrap: [IonicApp],

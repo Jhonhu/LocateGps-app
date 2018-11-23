@@ -2,14 +2,12 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 import { Geolocation } from '@ionic-native/geolocation';
-import { AgmCoreModule } from '@agm/core';
 
 import { LoadingController } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
   styles: ['agm-map {  height: 400px;  }'],
-  template: '<agm-map [latitude]="lat" [longitude]="lng"></agm-map>',
   templateUrl: 'home.html',
 })
 export class HomePage {
